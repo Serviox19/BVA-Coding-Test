@@ -1,0 +1,45 @@
+{
+  "name": "bva-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/plugin-transform-runtime": "",
+    "@babel/register": "",
+    "@babel/runtime": "",
+    "browser-sync": "",
+    "bufferutil": "",
+    "del": "",
+    "gulp": "",
+    "gulp-babel": "",
+    "gulp-better-rollup": "",
+    "gulp-data": "",
+    "gulp-if": "",
+    "gulp-minify-css": "",
+    "gulp-notify": "",
+    "gulp-plumber": "",
+    "gulp-rename": "",
+    "gulp-sass": "",
+    "gulp-sourcemaps": "",
+    "gulp-twig": "",
+    "gulp-uglify": "",
+    "rollup": "",
+    "utf-8-validate": ""
+  },
+  "devDependencies": {
+    "@babel/core": "",
+    "@babel/preset-env": "",
+    "@shopify/themekit": "",
+    "gulp-concat": "",
+    "gulp-connect": "",
+    "gulp-replace": "",
+    "gulp-touch-cmd": "",
+    "read-yaml": "",
+    "themekit": ""
+  }
+}
