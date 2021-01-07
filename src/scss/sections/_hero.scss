@@ -57,9 +57,11 @@
         font-family: 'Roboto', sans-serif;
         font-weight: 700;
         font-size: 2.25rem;
+        margin: 0 0 1rem !important;
 
         @include bp(Mama) {
           font-size: 2.875rem;
+          margin: 0 0 .5rem !important;
         }
       }
 
@@ -80,7 +82,7 @@
 
       .hero-button {
         display: inline-block;
-        margin-top: 2rem;
+        margin-top: 1.5rem;
         padding: .5rem 2.5rem;
         background: #57AD68;
         color: #FFF;
