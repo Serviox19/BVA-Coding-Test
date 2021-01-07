@@ -4,6 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "gulp",
+    "build": "gulp build",
+    "theme-watch": "theme watch --allow-live --notify=/tmp/.theme_ready",
+    "theme-deploy": "theme deploy --allow-live",
+    "theme-deploy:production": "theme deploy --env=production",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
