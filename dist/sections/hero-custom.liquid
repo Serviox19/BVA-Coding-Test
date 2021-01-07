@@ -1,0 +1,134 @@
+<div id="hero_custom--{{ section.id }}" class="homepage_hero {% if section.settings.additional_classes %}{{ section.settings.additional_classes }}{% endif %}">
+  <div class="homepage_hero__images">
+    <div class="desktop-image" style="background-image: url({{section.settings.background-image | img_url: '2400x' }})"></div>
+    <div class="mobile-image" style="background-image: url({{section.settings.mobile-background-image | img_url: '640x' }})"></div>
+  </div>
+  <div class="homepage_hero__content">
+    <h1 class="hero-text">{{section.settings.hero_text}}</h1>
+    {%- if section.settings.description_text -%}
+      {{ section.settings.description_text }}
+    {%- endif -%}
+    {%- if section.settings.hero_button -%}
+      <a href="{{section.settings.hero_link}}" class="hero-button">{{section.settings.hero_button}}</a>
+    {%- endif -%}
+  </div>
+</div>
+
+<style>
+#hero_custom--{{ section.id }}.homepage_hero {
+  min-height: {{ section.settings.height }};
+}
+
+#hero_custom--{{ section.id }}.homepage_hero .desktop-image {
+  min-height: {{ section.settings.height }};
+}
+
+#hero_custom--{{ section.id }}.homepage_hero .mobile-image {
+  min-height: {{ section.settings.height_mobile }};
+}
+
+#hero_custom--{{ section.id }}.homepage_hero .hero-text {
+  color: {{ section.settings.text_color }}
+}
+
+#hero_custom--{{ section.id }}.homepage_hero .hero-button {
+  background-color: {{ section.settings.hero_button_color }};
+}
+
+@media(max-width: 767px) {
+  #hero_custom--{{ section.id }}.homepage_hero {
+    min-height: {{ section.settings.height_mobile }};
+  }
+}
+</style>
+
+{% schema %}
+{
+  "name": "Hero",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Images"
+    },
+    {
+      "id": "background-image",
+      "type": "image_picker",
+      "label": "Background Image"
+    },
+    {
+      "id": "mobile-background-image",
+      "type": "image_picker",
+      "label": "Mobile Background Image"
+    },
+    {
+      "type": "header",
+      "content": "Text"
+    },
+    {
+      "id": "hero_text",
+      "type": "text",
+      "label": "Header Text Line One"
+    },
+    {
+      "id": "description_text",
+      "type": "text",
+      "label": "Description Text"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Hero Text Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Button"
+    },
+    {
+      "id": "hero_link",
+      "type": "url",
+      "label": "Hero URL"
+    },
+    {
+      "id": "hero_button",
+      "type": "text",
+      "label": "Hero Button"
+    },
+    {
+      "type": "color",
+      "id": "hero_button_color",
+      "label": "Hero Button Background Color",
+      "default": "#57AD68"
+    },
+    {
+      "type": "header",
+      "content": "Positioning"
+    },
+    {
+      "id": "height",
+      "type": "text",
+      "label": "Set Image Height"
+    },
+    {
+      "id": "height_mobile",
+      "type": "text",
+      "label": "Set Image Height - Mobile"
+    },
+    {
+      "type": "header",
+      "content": "Additional Settings"
+    },
+    {
+      "id": "additional_classes",
+      "type": "text",
+      "label": "Additional Classes"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero - Custom",
+      "category": "Enhanced"
+    }
+  ]
+}
+{% endschema %}
