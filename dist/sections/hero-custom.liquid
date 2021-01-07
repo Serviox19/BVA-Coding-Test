@@ -35,10 +35,6 @@
   color: {{ section.settings.text_color }}
 }
 
-#hero_custom--{{ section.id }}.homepage_hero .hero-button {
-  background-color: {{ section.settings.hero_button_color }};
-}
-
 @media(max-width: 767px) {
   #hero_custom--{{ section.id }}.homepage_hero {
     min-height: {{ section.settings.height_mobile }};
@@ -118,12 +114,6 @@
       "id": "hero_button",
       "type": "text",
       "label": "Hero Button"
-    },
-    {
-      "type": "color",
-      "id": "hero_button_color",
-      "label": "Hero Button Background Color",
-      "default": "#57AD68"
     },
     {
       "type": "header",
