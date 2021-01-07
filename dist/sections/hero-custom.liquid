@@ -4,13 +4,17 @@
     <div class="mobile-image" style="background-image: url({{section.settings.mobile-background-image | img_url: '640x' }})"></div>
   </div>
   <div class="homepage_hero__content">
-    <h1 class="hero-text">{{section.settings.hero_text}}</h1>
-    {%- if section.settings.description_text -%}
-      {{ section.settings.description_text }}
-    {%- endif -%}
-    {%- if section.settings.hero_button -%}
-      <a href="{{section.settings.hero_link}}" class="hero-button">{{section.settings.hero_button}}</a>
-    {%- endif -%}
+    <div class="wrapper {% if section.settings.text_alignment == 'left' %}left{% endif %} {% if section.settings.text_alignment == 'right' %}right{% endif %}">
+      <h1 class="hero-text">{{ section.settings.hero_text }}</h1>
+      {%- if section.settings.copy_text -%}
+        <p class="copy_text">
+          {{ section.settings.copy_text }}
+        </p>
+      {%- endif -%}
+      {%- if section.settings.hero_button -%}
+        <a href="{{section.settings.hero_link}}" class="hero-button">{{section.settings.hero_button}}</a>
+      {%- endif -%}
+    </div>
   </div>
 </div>
 
@@ -70,15 +74,36 @@
       "label": "Header Text Line One"
     },
     {
-      "id": "description_text",
-      "type": "text",
-      "label": "Description Text"
+      "id": "copy_text",
+      "type": "textarea",
+      "label": "Copy Text"
     },
     {
       "type": "color",
       "id": "text_color",
       "label": "Hero Text Color",
       "default": "#ffffff"
+    },
+    {
+      "id": "text_alignment",
+      "type": "select",
+      "label": "Text Alignment",
+      "options": [
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center",
+      "info": "Anchor the text to which side."
     },
     {
       "type": "header",
